@@ -6,8 +6,11 @@ start:
 install:  ## Install and start the project
 	$(NPM) install && $(NPM) lint
 
-check:
+check: valid style
 	$(NPM) lint:js
 
 valid:
 	$(NPM) lint:js-fix
+
+style:
+	$(NPM) lint:style

@@ -4,36 +4,44 @@
 ============================== */
 @font-face {
   font-family: "MuseoSans100";
-  src: url("/fonts/MuseoSans-100.otf");
+  src: url("@/assets/fonts/MuseoSans-100.otf");
 }
+
 @font-face {
   font-family: "MuseoSans300";
-  src: url("fonts/MuseoSans-300.otf");
+  src: url("@/assets/fonts/MuseoSans-300.otf");
 }
+
 @font-face {
   font-family: "MuseoSans500";
-  src: url("fonts/MuseoSans_500.otf");
+  src: url("@/assets/fonts/MuseoSans_500.otf");
 }
+
 @font-face {
   font-family: "MuseoSans700";
-  src: url("fonts/MuseoSans_700.otf");
+  src: url("@/assets/fonts/MuseoSans_700.otf");
 }
+
 @font-face {
   font-family: "fat_font";
-  src: url("fonts/freefatfont-slanted.otf");
+  src: url("@/assets/fonts/freefatfont-slanted.otf");
 }
+
 @font-face {
   font-family: "robotoligth";
-  src: url("fonts/Roboto-Light.ttf");
+  src: url("@/assets/fonts/Roboto-Light.ttf");
 }
+
 @font-face {
   font-family: "robotomedium";
-  src: url("fonts/Roboto-Medium.ttf");
+  src: url("@/assets/fonts/Roboto-Medium.ttf");
 }
+
 @font-face {
   font-family: "robotoregular";
-  src: url("fonts/Roboto-Regular.ttf");
+  src: url("@/assets/fonts/Roboto-Regular.ttf");
 }
+
 /* -- HEADER --
     ===============================
     ////////////////////////////////
@@ -80,17 +88,20 @@
   --m4_box-shadow: 6px 6px 12px #c6b5a8, -6px -6px 12px #f1dccd;
   --m5_box-shadow: 6px 6px 12px #c6b5a8, -6px -6px 12px #f1dccd;
 }
+
 #btn_reservation {
   .btn {
     a {
       color: var(--color_black);
     }
   }
+
   &:hover {
     transition: .5s;
     transform: scale(1.2);
   }
 }
+
 #scroll {
   display: flex;
   flex-direction: column;
@@ -98,85 +109,103 @@
   justify-content: center;
   scroll-behavior: smooth;
 }
+
 .blank {
   height: 15vh;
   width: 100%;
 }
-@media all and (min-width: 300px) {
-  body {
-    font-family: var(--MuseoSans100);
-    font-size: var(--s_font);
+
+body {
+  font-family: var(--MuseoSans100);
+  font-size: var(--s_font);
+}
+
+a {
+  text-decoration: none;
+}
+
+#generale_section {
+  width: 100%;
+  background-color: #f2dece;
+  position: relative;
+  overflow: hidden;
+}
+
+.section_global {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  height: 50vh;
+  position: relative;
+
+  img {
+    width: 500px;
+    position: absolute;
+    top: 69%;
+    left: 48%;
+    transform: translate(-50%, -50%);
   }
-  a {
-    text-decoration: none;
+}
+
+#btn_reservation {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 2rem;
+  margin-top: 9rem;
+  transition: .5s;
+}
+
+.btn {
+  background-color: var(--color_3);
+  font-size: var(--xl_font);
+  border-radius: 9px;
+  padding: 0.7rem 1.4rem;
+  box-shadow: var(--M_box-shadow);
+  cursor: pointer;
+  transition: .5s;
+}
+
+.bounce {
+  animation: bounce 2s infinite;
+
+  &:hover {
+    animation: none;
   }
-  #generale_section {
-    width: 100%;
-    background-color: #f2dece;
-    position: relative;
-    overflow: hidden;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
   }
-  .section_global {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+}
+
+40
+% {
+  transform: translateY(-14px);
+}
+
+60
+% {
+  transform: translateY(-10px);
+}
+
+100
+% {
+  transform: translateY(0px);
+}
+
+@media all and (min-width: 700px) {
   #logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-    height: 50vh;
-    position: relative;
     img {
-      width: 500px;
-      position: absolute;
-      top: 69%;
-      left: 48%;
-      transform: translate(-50%,-50%);
+      width: 900px;
+      top: 77%;
     }
   }
-  #btn_reservation {
-    display: flex;
-    justify-content: center;
-    padding: 1rem 2rem;
-    margin-top: 9rem;
-    transition: .5s;
-  }
-  .btn {
-    background-color: var(--color_3);
-    font-size: var(--xl_font);
-    border-radius: 9px;
-    padding: 0.7rem 1.4rem;
-    box-shadow: var(--M_box-shadow);
-    cursor: pointer;
-    transition: .5s;
-  }
-  .bounce {
-    animation: bounce 2s infinite;
-    &:hover {
-      animation: none;
-    }
-  }
-  @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% { transform: translateY(0);
-      }
-    }
-    40% {
-      transform: translateY(-14px);
-    }
-    60% {
-      transform: translateY(-10px);
-    }
-    100% {
-      transform: translateY(0px);
-    }
-  }
-  @media all and (min-width: 700px) {
-    #logo {
-      img {
-        width: 900px;
-        top: 77%;
-      }
-    }
-  }
+}
