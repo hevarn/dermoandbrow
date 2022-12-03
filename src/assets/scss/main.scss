@@ -1,0 +1,182 @@
+/* -- COMMENTAIRE --
+===============================
+////////////////////////////////
+============================== */
+@font-face {
+  font-family: "MuseoSans100";
+  src: url("/fonts/MuseoSans-100.otf");
+}
+@font-face {
+  font-family: "MuseoSans300";
+  src: url("fonts/MuseoSans-300.otf");
+}
+@font-face {
+  font-family: "MuseoSans500";
+  src: url("fonts/MuseoSans_500.otf");
+}
+@font-face {
+  font-family: "MuseoSans700";
+  src: url("fonts/MuseoSans_700.otf");
+}
+@font-face {
+  font-family: "fat_font";
+  src: url("fonts/freefatfont-slanted.otf");
+}
+@font-face {
+  font-family: "robotoligth";
+  src: url("fonts/Roboto-Light.ttf");
+}
+@font-face {
+  font-family: "robotomedium";
+  src: url("fonts/Roboto-Medium.ttf");
+}
+@font-face {
+  font-family: "robotoregular";
+  src: url("fonts/Roboto-Regular.ttf");
+}
+/* -- HEADER --
+    ===============================
+    ////////////////////////////////
+    ============================== */
+/* LOGO */
+/* BTN RESERVATION */
+/* SCROLL */
+/* BLANK */
+&:root {
+  --color_1: #F5D6C0;
+  --color_2: #EBC2B4;
+  --color_3: #E8AEA1;
+  --color_black: #0a0a0a;
+  --color_white: #f9f9f9;
+  --color_number: #f66646;
+  --color_success: #4ca140;
+  --color_error: #c9323a;
+  --dark-green: #9cc675;
+  --dark-yellow: #e89a3d;
+  --extra-light-brown: #fdf0d7;
+  --light-brown: #ecd5ab;
+  --dark-brown: #915b40;
+  --gold: #eccd1e;
+  --z_index: 10;
+  --fatfont: "fat_font";
+  --robotolith: "robotoligth";
+  --robotomedium: "robotomedium";
+  --robotoregular: "robotoregular";
+  --museosans100: "MuseoSans100";
+  --museosans300: "MuseoSans300";
+  --museosans500: "MuseoSans500";
+  --museosans700: "MuseoSans700";
+  --montserrat-blackitalic: "Montserrat-BlackItalic";
+  --xs_font: 15px;
+  --s_font: 18px;
+  --m_font: 20px;
+  --l_font: 24px;
+  --xl_font: 30px;
+  --xxl_font: 24px;
+  --s_box-shadow: 2px 2px 8px #d2b8a6c9, -6px -6px 12px #ffebd3ab;
+  --m_box-shadow: 6px 6px 12px #d2b8a6, -6px -6px 12px #ffebd3;
+  --m2_box-shadow: 6px 6px 12px #0404041c, -6px -6px 12px #7c7c7c1c;
+  --m3_box-shadow: 6px 6px 12px #8771698c, -6px -6px 12px #d5b2a5;
+  --m4_box-shadow: 6px 6px 12px #c6b5a8, -6px -6px 12px #f1dccd;
+  --m5_box-shadow: 6px 6px 12px #c6b5a8, -6px -6px 12px #f1dccd;
+}
+#btn_reservation {
+  .btn {
+    a {
+      color: var(--color_black);
+    }
+  }
+  &:hover {
+    transition: .5s;
+    transform: scale(1.2);
+  }
+}
+#scroll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  scroll-behavior: smooth;
+}
+.blank {
+  height: 15vh;
+  width: 100%;
+}
+@media all and (min-width: 300px) {
+  body {
+    font-family: var(--MuseoSans100);
+    font-size: var(--s_font);
+  }
+  a {
+    text-decoration: none;
+  }
+  #generale_section {
+    width: 100%;
+    background-color: #f2dece;
+    position: relative;
+    overflow: hidden;
+  }
+  .section_global {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    height: 50vh;
+    position: relative;
+    img {
+      width: 500px;
+      position: absolute;
+      top: 69%;
+      left: 48%;
+      transform: translate(-50%,-50%);
+    }
+  }
+  #btn_reservation {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 2rem;
+    margin-top: 9rem;
+    transition: .5s;
+  }
+  .btn {
+    background-color: var(--color_3);
+    font-size: var(--xl_font);
+    border-radius: 9px;
+    padding: 0.7rem 1.4rem;
+    box-shadow: var(--M_box-shadow);
+    cursor: pointer;
+    transition: .5s;
+  }
+  .bounce {
+    animation: bounce 2s infinite;
+    &:hover {
+      animation: none;
+    }
+  }
+  @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0);
+      }
+    }
+    40% {
+      transform: translateY(-14px);
+    }
+    60% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  @media all and (min-width: 700px) {
+    #logo {
+      img {
+        width: 900px;
+        top: 77%;
+      }
+    }
+  }
