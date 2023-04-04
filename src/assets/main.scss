@@ -1,4 +1,3 @@
-
 @font-face {
   font-family: "MuseoSans100";
   src: url("@/assets/fonts/MuseoSans-100.otf");
@@ -170,9 +169,11 @@ $division: 1.73;
   border: 2px solid $color_1 !important;
   box-shadow: inset 0 0 0 0 $color_1 !important;
 }
+
 .show_value {
   span.word {
     animation-play-state: running !important;
+
     span.char {
       @for $i from 1 through 10 {
         &:nth-of-type(#{$i}) {
@@ -193,12 +194,12 @@ body {
   max-width: 100vw;
   box-sizing: border-box;
 
-  .menu-button{
-    position:fixed;
-    background-color:transparent;
-    outline:none;
-    border:1px solid white;
-    border-radius:50%;
+  .menu-button {
+    position: fixed;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid white;
+    border-radius: 50%;
     padding: 0;
     top: 58px;
     left: 62px;
@@ -206,8 +207,9 @@ body {
     height: 30px;
     z-index: 0;
     cursor: pointer;
-    color:white;
+    color: white;
   }
+
   nav {
     display: flex;
     flex-flow: column wrap;
@@ -221,6 +223,7 @@ body {
     right: 0;
     background-color: white;
     transform: translate3d(-100%, 0, 0);
+
     ul {
       display: flex;
       flex-flow: column wrap;
@@ -228,30 +231,34 @@ body {
       align-content: center;
       align-items: center;
       position: fixed;
-      list-style:none;
+      list-style: none;
+
       li {
-        font-weight:700;
-        font-size:3rem;
-        margin-bottom:1rem;
-        visibility:hidden;
+        font-weight: 700;
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        visibility: hidden;
 
       }
     }
   }
 
-  .skew{
+  .skew {
     clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
   }
+
   .vertical {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
+
   .skewback {
     clip-path: polygon(0 0, -100% 0, 100% 100%, 0 100%);
   }
+
   .content {
-    padding:2em;
-    color:white;
-    max-width:600px;
+    padding: 2em;
+    color: white;
+    max-width: 600px;
   }
 
   #social {
@@ -461,15 +468,6 @@ body {
     cursor: auto;
     overflow: hidden;
 
-    #frame .frame-container #penlink {
-      transform: rotate(0deg);
-      transition-delay: 0.3s, 2s;
-
-      span {
-        animation-play-state: running;
-      }
-    }
-
     #wrap {
       transform: translateX(-125vw);
       transition-delay: 0s;
@@ -545,12 +543,6 @@ body {
       &:after {
         transform: translateX(-150%) skewX(-15deg);
       }
-
-      .frame-container iframe {
-        clip-path: polygon(-10% -10%, 110% -10%, 110% 110%, -10% 110%);
-        visibility: visible;
-        opacity: 1;
-      }
     }
   }
 
@@ -565,9 +557,10 @@ body {
           &:before {
             color: $o;
           }
-          @for $i from 1 through 10 {
+
+          @for $i from 1 through 8 {
             &:nth-of-type(#{$i}) {
-              transform: rotate(#{($i - 1) * 37}deg);
+              transform: rotate(#{($i - 1) * 47}deg);
               color: #242424;
             }
           }
@@ -614,7 +607,7 @@ body {
       }
 
       span.char {
-        font-size: 10px;
+        font-size: 12px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -626,6 +619,9 @@ body {
         transform-origin: 50% 30px;
         overflow: hidden;
         color: transparent;
+        @media (max-width: 500px) {
+          font-size: 10px;
+        }
 
         &:before {
           content: attr(data-char);
@@ -666,6 +662,11 @@ body {
     transform-style: preserve-3d;
     backface-visibility: hidden;
     will-change: transform;
+    @media (max-width: 500px) {
+      height: 116vh;
+      //width: 115vw;
+      //overflow-y: scroll;
+    }
 
     &:before,
     &:after {
@@ -680,6 +681,10 @@ body {
       transition-delay: 0.25s;
       z-index: 999;
       transform: translateX(0) skewX(5deg);
+      @media (max-width: 500px) {
+        transform: translateX(4%) skewX(5deg);
+        height: 125%;
+      }
     }
 
     &:after {
@@ -702,13 +707,17 @@ body {
       top: 45px;
       width: 30px;
       height: 30px;
-      box-shadow: 0 0 0 2px $g, inset 0 0 0 $o, 0 0 0 20px $bg, 0 0 0 22px $o;
+      box-shadow: 0 0 0 2px #08350e, inset 0 0 0 #fe4e01, 0 0 0 22px #fce8df, 0 0 0 25px #fe4e01;
       background: $bg;
       border-radius: 100%;
       position: absolute;
       cursor: pointer;
       transform: rotate(180deg) scale(0);
       transition: transform 0.3s ease-in-out, box-shadow 0.2s ease-in-out;
+      @media (max-width: 500px) {
+        left: 35px;
+        top: 220px
+      }
 
       &:hover {
         div {
@@ -767,6 +776,13 @@ body {
       display: flex;
       justify-content: center;
       align-items: center;
+      @media (max-width: 500px) {
+        position: absolute;
+        top: 16px;
+        left: 6px;
+        width: calc(100% + 12vw);
+        //height: calc(100% + 27vw);
+      }
     }
 
     .frame-container {
@@ -776,68 +792,115 @@ body {
       max-width: 1200px;
       max-height: 1200px;
       display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-start;
+      flex-direction: column;
+      background-color: $bg;
+      box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
 
-      #penlink {
-        position: absolute;
-        bottom: -10px;
-        text-decoration: none;
-        color: $o;
-        font-weight: 900;
-        transition: color 0.2s ease-in-out, transform 0.7s $elastic;
-        transition-delay: 0.2s;
-        letter-spacing: -2px;
-        padding: 10px 15px;
-        z-index: 9;
-        transform-origin: 50% 12.5vh;
-        transform: rotate(-180deg);
-
-        &:after {
-          z-index: -5;
+      .title-frame-container {
+        height: 30%;
+        width: 100%;
+        position: relative;
+        img {
+          width: 100%;
+          height: 100%;
         }
+        .blur {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          h3 {
 
-        &:hover {
-          color: $bg;
-        }
+            width: 100%;
 
-        strong {
-          position: relative;
-          z-index: 9;
-        }
-
-        span {
-          display: inline-block;
-          animation: back-n-forth 0.5s ease-in-out infinite alternate;
-          animation-play-state: paused;
-          @keyframes back-n-forth {
-            to {
-              transform: translateX(-2.5px);
+            transform: translate(-50%, -50%);
+            font-family: $museosans500, serif;
+            font-weight: 500;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: $color_black;
+            font-size: 54px;
+            margin: 5px;
+            z-index: 3;
+            color: $color_3;
+            pointer-events: none;
+            text-transform: uppercase;
+            @media (max-width: 500px) {
+              font-size: 57px;
             }
           }
         }
-
-        @include magic-border(2px, $g, 0.2s, 0);
       }
 
-      iframe {
-        position: absolute;
-        top: 0;
-        left: 25px;
-        width: calc(100% - 50px);
-        height: calc(100% - 50px);
-        background: #fff;
-        border-radius: 5px;
-        visibility: hidden;
-        clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
-        transition: clip-path 0s linear, visibility 0s linear,
-        opacity 1s ease-in-out;
-        transition-delay: 0.75s, 0.75s, 1.25s;
-        opacity: 0;
-        box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+      .inner {
+        width: 100%;
+        height: 100%;
+        overflow-y: scroll;
+        .prestations_list {
+          height: 150vh;
+          margin-top: 30px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          .about{
+            padding: 5px 37px;
+            margin: 0;
+          }
+          .prestation{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            margin: 10px 0;
+            border: 1px solid;
+            padding: 18px;
+            max-width: 700px;
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 1px 4px 0 #000000c2, -7px -7px 9px #f0ddd5db;
+            @media (max-width: 500px) {
+              width:90%;
+            }
+
+            @media (min-width: 1000px ) {
+              max-width: 80%;
+            }
+            .name, .price {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              padding-left: 4px;
+              p{
+                font-family: $museosans500, serif;
+                margin: 0;
+                padding-left: 5px;
+              }
+              p:nth-child(2){
+                font-family: $robotolith, serif;
+                font-size: 14px;
+                margin-top: 3px;
+              }
+            }
+            .price{
+              flex-direction: row;
+              align-items: center;
+              justify-content: center;
+              background-color: black;
+              padding: 5px;
+              border-radius: 12px;
+              height: 30px;
+              margin-right: 5px;
+              p{
+                color: $color_white;
+                font-family: $robotolith, serif;
+                font-size: 15px;
+              }
+            }
+          }
+        }
       }
     }
+
   }
 
   &:hover {
@@ -1020,6 +1083,9 @@ body {
       height: 700px;
       width: 100%;
       position: relative;
+      @media (max-width: 500px) {
+        height: 600px;
+      }
 
       .wrapper {
         color: transparent;
@@ -1094,20 +1160,24 @@ body {
 
     #profile {
       width: 100%;
-      height: 100vh;
+      height: 120vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: start;
       position: relative;
-      margin: 100px 0;
       max-height: 100vh;
+      margin-bottom: 0;
 
       .dark {
         position: absolute;
         top: 30%;
         @media (min-width: 600px) {
+          top: 26%;
+        }
+        @media (min-width: 1000px) {
           top: 20%;
+          left: 0;
         }
 
         span.word {
@@ -1178,8 +1248,8 @@ body {
         }
 
         .description {
-          width: 320px;
-          height: 500px;
+          width: 365px;
+          height: 650px;
           border: 2px solid $color_black;
           border-radius: 20px;
           display: flex;
@@ -1235,8 +1305,8 @@ body {
 
             p {
               font-family: $museosans100;
-              font-size: 14px;
-              width: 75%;
+              font-size: 17px;
+              width: 81%;
               padding: 1px;
               margin: 0 0 5px 0;
             }
@@ -1247,25 +1317,28 @@ body {
 
     #values {
       margin: 0 0 150px 0;
-      padding: 10px ;
+      padding: 10px;
       background: transparent;
       width: 100%;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+
       h2 {
         position: absolute;
         left: 11%;
         top: -30%;
         width: 100%;
       }
+
       .title {
         font-size: 12px;
         color: $color_3;
       }
+
       .wrapper_values {
-        width: 90%;
+        width: 100%;
         border-radius: 20px;
         border: 1px solid $color_black;
         display: flex;
@@ -1274,9 +1347,9 @@ body {
         align-items: center;
         margin: 0 0 30px 0;
         @media (min-width: 1000px) {
-          width: 100%;
           height: 70%;
         }
+
         .value {
           transition-delay: 0s;
           transition: .3s ease;
@@ -1293,10 +1366,12 @@ body {
           @media (min-width: 900px) {
             width: 25%;
           }
+
           &:hover {
             transform: scale(1.2);
             transition: .3s ease;
           }
+
           h2 {
             width: 100%;
             position: absolute;
@@ -1307,23 +1382,27 @@ body {
             color: #000;
             grid-area: none;
             @media (min-width: 1000px) {
-              top:0;
+              top: 0;
             }
+
             span.word {
               color: $color_black;
+
               &:before {
                 display: none;
               }
             }
           }
+
           .thumb {
-            width: 100px;
-            height: 100px;
+            width: 133px;
+            height: 125px;
             margin-bottom: 20px;
             @media (min-width: 1000px) {
               width: 150px;
               height: 150px;
             }
+
             .inside_value {
               position: absolute;
               width: 98%;
@@ -1333,9 +1412,11 @@ body {
               transform: translate(-50%, -50%);
               overflow: hidden;
               z-index: 0;
+
               &:after {
                 display: none !important;
               }
+
               &:before {
                 content: "";
                 position: absolute;
@@ -1349,10 +1430,12 @@ body {
                 z-index: 2;
               }
             }
+
             &:before {
               display: none;
             }
-            p{
+
+            p {
               top: 107%;
               font-size: 13px;
               color: #bf7d6f;
@@ -1591,18 +1674,22 @@ body {
         }
 
         &:before {
-          content: "";
+          content:'';
+          background-image: url('@/assets/img/b1.jpg') ;
+          background-size: cover;
+          background-position: center;
           position: absolute;
           width: 100%;
           height: 100%;
           left: 5%;
           top: 5%;
-          box-shadow: 0 0 0 2px #ffffff, 0 0 0 0 #ffffff, 0 0 0 0 #fe4e01;
+          //box-shadow: 0 0 0 2px #ffffff, 0 0 0 0 #ffffff, 0 0 0 0 #fe4e01;
           transition: transform 0.2s cubic-bezier(1, 0.885, 0.32, 1), box-shadow 0.2s cubic-bezier(1, 0.885, 0.32, 1);
           transition-delay: 0.2s, 0s;
-          background: radial-gradient(circle at center, rgb(255 255 255 / 61%) 2px, rgba(255, 255, 255, 0.005) 2px, rgba(255, 255, 255, 0.005) 20px) 0 0/20px 20px, radial-gradient(circle at center, rgb(255 255 255 / 60%) 2px, rgba(255, 255, 255, 0.005) 1px, rgba(255, 255, 255, 0.005) 37px) 10px 10px/20px 20px;
+          //background: radial-gradient(circle at center, rgb(255 255 255 / 61%) 2px, rgba(255, 255, 255, 0.005) 2px, rgba(255, 255, 255, 0.005) 20px) 0 0/20px 20px, radial-gradient(circle at center, rgb(255 255 255 / 60%) 2px, rgba(255, 255, 255, 0.005) 1px, rgba(255, 255, 255, 0.005) 37px) 10px 10px/20px 20px;
           border-radius: 20px;
         }
+
         img {
           mix-blend-mode: exclusion;
           padding: 2vmin;
@@ -1633,10 +1720,6 @@ body {
           }
         }
       }
-
-      .map {
-
-      }
     }
 
     #slider_reviews {
@@ -1646,15 +1729,12 @@ body {
       align-items: center;
       justify-content: start;
       position: relative;
-      margin: 180px 0 0 0;
-      max-height: 100vh;
-      height: 50vh;
+      margin: 0;
+      height: 30vh;
+
       .dark {
         position: absolute;
-        top: 0;
-        @media (min-width: 600px) {
-          top: -10%;
-        }
+        top: -10%;
       }
 
       .rolodex {
@@ -1666,21 +1746,24 @@ body {
 
         .main-carousel {
           cursor: none;
+
           .flickity-prev-next-button.previous {
-            left:-16px !important;
+            left: -21px !important;
             cursor: none;
             @media (min-width: 600px) {
-              left:-40px !important;
+              left: -40px !important;
             }
           }
+
           .flickity-prev-next-button.next {
             right: -19px;
             cursor: none;
             @media (min-width: 600px) {
-              right:-40px !important;
+              right: -40px !important;
             }
           }
         }
+
         .main-carousel,
         .flickity-viewport,
         .flickity-slider,
@@ -1689,6 +1772,7 @@ body {
           height: 100%;
           width: 100%;
           padding: 0;
+
           .inner_text {
             height: 100%;
             display: flex;
@@ -1697,10 +1781,11 @@ body {
             justify-content: start;
             margin-top: 50px;
             padding: 20px 10px 10px 10px;
+
             p {
               font-family: $museosans100;
               font-size: 17px;
-              text-transform:lowercase;
+              text-transform: lowercase;
               padding: 10px;
               white-space: normal;
               @media (min-width: 600px) {
@@ -1708,13 +1793,16 @@ body {
                 padding: 66px;
               }
             }
+
             h3 {
               font-size: 13px;
               text-transform: uppercase;
               font-family: $museosans700;
             }
+
             span.word {
               color: $color_black;
+
               &:before {
                 display: none;
               }
@@ -1729,12 +1817,13 @@ body {
       width: 100%;
       max-height: 150vh;
       display: grid;
+      margin-bottom: 0;
 
       .map {
         width: 100%;
         height: 100%;
-        grid-area: 4/6/2/1;
-        background-image: url("@/assets/img/map_dermo_&_brows.png");
+        grid-area: 6/6/2/1;
+        //background-image: url("@/assets/img/map_dermo_&_brows.png");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center center;
@@ -1744,7 +1833,17 @@ body {
         }
 
         img {
-          height: 100%;
+          height: 82%;
+          top: -11%;
+          z-index: 2;
+          left: 49%;
+          @media (max-width: 500px) {
+            height: 400px;
+            top: 18%;
+            transform: rotate(90deg);
+            left: -56%;
+            z-index: 2;
+          }
         }
 
         &:before {
@@ -1867,7 +1966,12 @@ body {
       font-size: 12px;
       border-radius: 70px;
       display: flex;
-      min-height: 150vh;
+      height: 150vh;
+      max-height: 200vh;
+      @media (max-width: 500px) {
+        border-radius: 20px;
+        height: 200vh;
+      }
 
       h2 {
         position: absolute;
@@ -1939,15 +2043,13 @@ body {
           align-items: center;
           justify-content: space-evenly;
           text-align: center;
-          min-height: 119px;
-          border: 1px solid $color_white;
-          width: 476px;
           transition: 400ms ease-in-out;
           border: none;
-          font-size: 12px;
 
           p {
-            line-height: 33px;
+            line-height: 25px;
+            font-size: 15px;
+            padding: 0 10px;
           }
 
           a {
@@ -1965,7 +2067,8 @@ body {
           margin-bottom: 2px;
         }
       }
-      .jess{
+
+      .jess {
         image {
           width: 46px;
         }

@@ -22,25 +22,10 @@ export default {
 
       let cursor = document.getElementById("cursor");
       const cursorElements = cursor.children
-      let close = document.getElementById("close");
       let body = document.body;
-      let iframe = document.getElementById("pen");
-      let penLink = document.getElementById("penlink");
       let links = document.getElementsByTagName("a");
-
-      let frames = [
-        "https://codepen.io/cobra_winfrey/debug/xxVJZwo",
-        "https://cdpn.io/cobra_winfrey/debug/wvGyKEY",
-        "https://codepen.io/cobra_winfrey/debug/OJVJJoj",
-        "https://cdpn.io/cobra_winfrey/debug/YzXOBEN",
-        "https://codepen.io/cobra_winfrey/debug/qBZWVmO",
-        "https://codepen.io/cobra_winfrey/debug/eYOXOdB",
-        "https://codepen.io/cobra_winfrey/debug/OJXJeod",
-        "https://codepen.io/cobra_winfrey/debug/PoqVQRq",
-        "https://cdpn.io/cobra_winfrey/debug/qgEGMZ",
-        "https://codepen.io/cobra_winfrey/debug/RwWYGxj"
-      ];
       const about = document.getElementById("description")
+
       about.addEventListener('mousemove', ()=> {
         cursor.classList.add("revert_color");
       })
@@ -51,17 +36,12 @@ export default {
       const values = document.getElementsByClassName("inside_value")
       for (let i = 0; i < values.length; i++) {
         values[i].addEventListener("mousemove", function (event) {
-          // let childCursor = cursor.firstElementChild;
           cursorElements[0].classList.add("show_value");
         });
         values[i].addEventListener("mouseout", function (event) {
-          // let childCursor = cursor.firstElementChild;
           cursorElements[0].classList.remove("show_value");
         });
       }
-
-// Load iFrames on demand & remove after modal is closed to reduce weight & smooth out transitions
-
 
       let cards = document.getElementsByClassName("inner");
       for (let i = 0; i < cards.length; i++) {
@@ -71,19 +51,8 @@ export default {
         cards[i].addEventListener("mouseout", function (event) {
           cursor.classList.remove("active");
         });
-        // cards[i].addEventListener(
-        //     "click",
-        //     function (i) {
-        //       body.classList.add("active");
-        //       iframe.setAttribute("src", frames[i]);
-        //       let penDebug = frames[i];
-        //       let penFull = penDebug.replace("debug", "pen");
-        //       penLink.setAttribute("href", penFull);
-        //     }.bind(null, i)
-        // );
       }
 
-// hover events for social links
       let link;
       for (link of links) {
         link.addEventListener("mouseover", function (event) {
@@ -96,28 +65,6 @@ export default {
           cursor.classList.remove("linkhover");
         });
       }
-
-// Escape key option to exit active state
-
-      // document.onkeydown = function (evt) {
-      //   evt = evt || window.event;
-      //   let isEscape = false;
-      //   if ("key" in evt) {
-      //     isEscape = evt.key === "Escape" || evt.key === "Esc";
-      //   } else {
-      //     isEscape = evt.keyCode === 27;
-      //   }
-      //   if (isEscape) {
-      //     body.classList.remove("active");
-      //     setTimeout(() => {
-      //       iframe.setAttribute("src", "");
-      //     }, 2000);
-      //   }
-      // };
-
-      // close.addEventListener("click", function (event) {
-      //   body.classList.remove("active");
-      // });
 
       gsap.set("#cursor", {xPercent: -50, yPercent: -50});
       const pos = {x: window.innerWidth / 2, y: window.innerHeight / 2};
@@ -143,9 +90,6 @@ export default {
 
       Splitting();
 
-// Individual section scroll progress
-
-
       gsap.utils.toArray(".panel").forEach((section, index) => {
         gsap.to(this, {
           scrollTrigger: {
@@ -160,8 +104,6 @@ export default {
         });
       });
 
-// Full page scroll progress
-
       gsap.to("body", {
         scrollTrigger: {
           trigger: "body",
@@ -173,8 +115,6 @@ export default {
           }
         }
       });
-
-// Pull out the preloader
 
       document.addEventListener("DOMContentLoaded", function () {
         body.classList.add("loaded");
@@ -195,7 +135,42 @@ export default {
         pauseAutoPlayOnHover: false,
         adaptiveHeight: true
       });
-    }
+    },
+    // magnetic() {
+    //   let links = document.getElementsByClassName('hover-me');
+    //   let cursor = document.getElementById('cursor');
+    //   console.log(links)
+    //
+    //
+    //   const animateMe = function(e) {
+    //     const span = this.querySelector('span');
+    //     console.log(span)
+    //     const { offsetX: x, offsetY: y } = e,
+    //         { offsetWidth: width, offsetHeight: height } = this;
+    //
+    //     const move = 20;
+    //     const xMove = x / width * (move * 2) - move;
+    //     const yMove = y / height * (move * 2) - move;
+    //
+    //     span.style.transform = `translate(${xMove}px, ${yMove}px)`;
+    //
+    //     if (e.type === 'mouseleave') span.style.transform = '';
+    //   };
+    //
+    //   const editCursor = e => {
+    //     const { clientX: x, clientY: y } = e;
+    //     cursor.style.left = x + 'px';
+    //     cursor.style.top = y + 'px';
+    //   };
+    //   let link;
+    //   for (link of links) {
+    //     console.log(link)
+    //     link.addEventListener("mouseover", animateMe);
+    //     link.addEventListener("mouseleave", animateMe);
+    //   }
+    //
+    //   window.addEventListener('mousemove', editCursor);
+    // }
   }
 }
 </script>

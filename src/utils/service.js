@@ -4,28 +4,115 @@ export const data = {
             "id": 1,
             "slug": "beauté_des_sourcils",
             "name": "Beauté des sourcils",
-            "image_path": "@/assets/img/image.png",
+            "image_path": "image1.jpg",
             "content": " A COMPLÉTER !!!!!!!!!!!!!! ",
-            "prestations": {
-                "prestation1": {
-                    "contenu": "valeur",
-                    "image_path": "@/assets/img/image.png",
-                    "price": "valeur",
-                    "time": "valeur"
+            "prestations": [
+                {
+                    "id": 1,
+                    "name": "descrition de la prestation ",
+                    "content": "complement d'informations ",
+                    "price": "100€",
+                    "time": "3h"
                 },
-                "prestation2": {
-                    "contenu": "valeur",
-                    "image_path": "@/assets/img/image.png",
-                    "price": "valeur",
-                    "time": "valeur"
+                {
+                    "id": 2,
+                    "name": "descrition de la prestation ",
+                    "content": "",
+                    "price": "100€",
+                    "time": "3h"
                 },
-                "prestation3": {
-                    "contenu": "valeur",
-                    "image_path": "@/assets/img/image.png",
-                    "price": "valeur",
-                    "time": "valeur"
+               {
+                   "id": 3,
+                    "name": "descrition de la prestation ",
+                   "content": "",
+                    "price": "100€",
+                    "time": "3h"
+                },
+                {
+                    "id": 4,
+                    "name": "descrition de la prestation ",
+                    "content": "",
+                    "price": "100€",
+                    "time": "3h"
+                },
+                {
+                    "id": 5,
+                    "name": "descrition de la prestation ",
+                    "content": "",
+                    "price": "100€",
+                    "time": "3h"
+                },
+                {
+                    "id": 6,
+                    "name": "descrition de la prestation ",
+                    "content": "",
+                    "price": "100€",
+                    "time": "3h"
+                },
+                {
+                    "id": 7,
+                    "name": "descrition de la prestation ",
+                    "content": "",
+                    "price": "100€",
+                    "time": "3h"
+                },
+                {
+                    "id": 8,
+                    "name": "descrition de la prestation ",
+                    "content": "",
+                    "price": "100€",
+                    "time": "3h"
+                },
+                {
+                    "id": 9,
+                    "name": "descrition de la prestation ",
+                    "content": "",
+                    "price": "100€",
+                    "time": "3h"
+                },
+                {
+                    "id": 10,
+                    "name": "descrition de la prestation ",
+                    "content": "",
+                    "price": "100€",
+                    "time": "3h"
+                },
+                {
+                    "id": 11,
+                    "name": "descrition de la prestation ",
+                    "content": "",
+                    "price": "100€",
+                    "time": "3h"
+                },
+                {
+                    "id": 12,
+                    "name": "descrition de la prestation ",
+                    "content": "",
+                    "price": "100€",
+                    "time": "3h"
+                },
+                {
+                    "id": 13,
+                    "name": "descrition de la prestation ",
+                    "content": "",
+                    "price": "100€",
+                    "time": "3h"
+                },
+                {
+                    "id": 14,
+                    "name": "descrition de la prestation ",
+                    "content": "",
+                    "price": "100€",
+                    "time": "3h"
+                },
+                {
+                    "id": 15,
+                    "name": "descrition de la prestation ",
+                    "content": "",
+                    "price": "100€",
+                    "time": "3h"
                 }
-            }
+            ]
         },
         {
             "id": 2,

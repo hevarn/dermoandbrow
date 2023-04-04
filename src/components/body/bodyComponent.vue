@@ -40,7 +40,6 @@ export default {
   created() {
     useEmetter.on("prestation", (evt) => {
       this.serviceSelected = evt;
-      console.log(this.serviceSelected, 'in body')
     });
   },
 }

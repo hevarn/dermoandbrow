@@ -32,10 +32,9 @@ export default {
   },
   methods: {
     selectedPrestation(prestation) {
-      console.log('ici card compoennt', prestation)
       document.body.classList.add('active')
       useEmetter.emit('prestation', prestation)
-    }
+    },
   },
 }
 </script>

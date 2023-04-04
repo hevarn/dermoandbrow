@@ -33,7 +33,6 @@ import service from "@/utils/service.js";
 
 export default {
   name: "testComponent",
-  emits: ["prestation-from-wrapper"],
   components: {
     CustomerReviewsComponent,
     MyValuesComponents, AboutMeComponent, FooterComponent, MapComponent, CardComponent},
@@ -44,7 +43,6 @@ export default {
     }
   },
   created() {
-    console.log(service['hydra:member'])
     this.allPrestation = service['hydra:member']
   },
   watch: {
