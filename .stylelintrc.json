@@ -1,9 +1,0 @@
-{
-  "extends": ["stylelint-config-html", "stylelint-config-prettier"],
-  "overrides": [
-    {
-      "files": ["**/*.{js}"],
-      "customSyntax": "postcss-lit"
-    }
-  ]
-}
